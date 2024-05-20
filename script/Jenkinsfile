@@ -9,5 +9,15 @@ pipeline {
                 sh 'npm install'
             }
         }
+        stage('starting') {
+            steps {
+                sh 'npm start'
+            }
+        }
+        stage('packing') {
+            steps {
+                sh 'npm pack'
+            }
+        }
     }
 }
