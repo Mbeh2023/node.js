@@ -14,11 +14,13 @@ pipeline {
             steps {
                 sh 'npm pack'
             }
+        
         }
-        stage('artifact') {
+        stage('starting') {
             steps {
-                sh 'curl -uadmin:AP6APkHxetchhfhHqpaawMctMhu -T my-app-1.2.0.tgz "http://ec2-100-26-171-136.compute-1.amazonaws.com:8081/artifactory/steph_artifact/nodeapp"'
+                sh 'npm start'
             }
         }
+       
     }
 }
